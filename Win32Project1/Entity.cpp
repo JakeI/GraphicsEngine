@@ -13,7 +13,7 @@ Entity::~Entity(){
 		if (it->second.allocated) {
 			delete it->second.ec;
 		}
-		components.erase(it);
+		components.erase(it);!!!
 	}
 }
 
