@@ -1,0 +1,4 @@
+primative GL_QUADS
+shader "res/shaders/uniformColor"
+
+mesh "res/meshs/quad.mesh" layout xy

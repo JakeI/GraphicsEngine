@@ -1,0 +1,6 @@
+target GL_ARRAY_BUFFER
+
+-1, -1,
+1, -1,
+1, 1,
+-1, 1,

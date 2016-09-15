@@ -1,0 +1,6 @@
+#Information about the georgia font texture
+
+File="georgia.png"
+
+MinFilter=LINEAR
+MagFilter=LINEAR
