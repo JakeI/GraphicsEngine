@@ -3,44 +3,57 @@
 #include "StdAfx.h"
 #include "Shader.h"
 #include "Mesh.h"
+#include "Strings.h"
+#include "RenderMode.h"
+#include "Mdl.h"
+#include "Texture.h"
+#include "ResourceGetter.h"
 
-typedef void(*shaderUniformLoader)(Shader*, void*);
+class Entity;
+
+using namespace rem;
 
 class Model {
-protected:
+protected: //private: this should and will be private again
 
-	struct Atribute {
-		int attrib;
-		int start;
-		int dim;
-		Atribute() { attrib = -1; start = -1; dim = -1; }
-		Atribute(int attrib, int start, int dim);
-		void set(int attrib, int start, int dim);
-		inline bool isUsed() { return attrib != -1 && start != -1 && dim != -1; }
+	struct ModeRenderParam {
+		GLenum primative;
+		Shader* shader;
+		Texture* texture;
+		int begin, end;
+		GLuint vao;
+		std::list<int> usedLocations;
+		ModeRenderParam() : primative(GL_TRIANGLE_STRIP), shader(nullptr), texture(nullptr), begin(0), end(0), vao(0) {}
+		void setRange(int b, int e) { begin = b; end = e; }
 	};
 
-private:
+	struct Pair {
+		RenderMode first;
+		ModeRenderParam second;
+		Pair() : first(rem::UNDEFINED), second() {}
+	};
 
-	std::string shader;
-	std::list<std::string> meshs;
+	static std::list<Pair>::iterator find(RenderMode mode_bit, std::list<Pair> & list) { // Seach for a pari with a matching bit in the render mode
+		for (std::list<Pair>::iterator it = list.begin(); it != list.end(); ++it) 
+			if (it->first & mode_bit) return it;
+		return list.end();
+	}
 
-	void load(const std::string & path);
+	std::list<Pair> renderMap; //this will feal like a std::map but a allow to search for the key (Pair.first) with a spesific bit set
+	ResourceGetter resGet;
 
-	void readPrimativeType(std::ifstream & in);
-	void readLayoutLine(std::ifstream & in, std::list<Atribute> & atributes, int* stride);
+protected:
 
-	GLuint vao;
-	GLenum primative;
-
-	std::list<int> locations;
-	void setLocations(const std::list<Atribute> & atributes);
+	void setUp(const Mdl* mdl);
 
 public:
 
-	Model();
+	Model(const std::string & path);
+	Model(const Mdl* mdl);
+	Model(); // must call the setUp method
 	~Model();
 
-	static Model* readMdl(const std::string & path);
-
-	void render(shaderUniformLoader sul, void* data);
+	void render(RenderMode mode, Entity* componentBuffer, void* param);
+	void setTexturePtr(RenderMode mode, Texture* texture);
+	void setRange(RenderMode mode, int begin, int end);
 };

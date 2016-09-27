@@ -15,7 +15,3 @@ ColorComponent::~ColorComponent()
 void ColorComponent::increment(float t, float dt) {
 
 }
-
-void ColorComponent::upload(Shader* shader) {
-	shader->uniform("color", color);
-}

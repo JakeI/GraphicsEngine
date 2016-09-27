@@ -1,4 +1,7 @@
-primative GL_QUADS
-shader "res/shaders/uniformColor"
 
-mesh "res/meshs/quad.mesh" layout xy
+Mode UNIFORM
+	primative GL_QUADS
+	shader "res/shaders/uniformColor"
+	range from 0 to end("res/mesh/quad.mesh")
+
+	mesh "res/meshs/quad.mesh" layout xy

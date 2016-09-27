@@ -1,0 +1,8 @@
+
+
+Mode UNIFORM FULL
+	primative GL_TRIANGLES
+	shader "res/shaders/uniformColor"
+	range from 0 to end("res/mesh/arrow2D.mesh")
+
+	mesh "res/meshs/arrow2D.mesh" layout xy

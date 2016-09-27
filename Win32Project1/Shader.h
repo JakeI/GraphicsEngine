@@ -6,6 +6,10 @@
 
 class Shader
 {
+public:
+	//		         name		  location
+	typedef std::map<std::string, GLint> UniformMap;
+
 private:
 
 	static std::string shaderTypeToString(const int type);
@@ -20,16 +24,14 @@ private:
 	void link(const std::string & path);
 
 	/*//		 type			 name		  location
-	//std::map<GLint, std::map<std::string, GLint>> uniforms;*/
-
-	//		 name		  location
-	std::map<std::string, GLint> uniforms;
-	typedef std::map<std::string, GLint> uniformMap;
+	//std::map<GLint, std::map<std::string, GLint>> uniforms;*/	
 
 	GLint getUniformLocation(const std::string & name);
 	void findUniformLocations();
 
 public:
+	UniformMap uniforms;
+
 	Shader(const std::string & path);
 	~Shader();
 	
@@ -44,5 +46,12 @@ public:
 	void uniform(const std::string & name, const glm::vec4 v);
 	void uniform(const std::string & name, const glm::mat4 m);
 	void uniform(const std::string & name, const bool b);
+	GLint uniformLocation(const std::string & name);
+	void uniform(const GLint location, const float f);
+	void uniform(const GLint location, const glm::vec2 v);
+	void uniform(const GLint location, const glm::vec3 v);
+	void uniform(const GLint location, const glm::vec4 v);
+	void uniform(const GLint location, const glm::mat4 m);
+	void uniform(const GLint location, const bool b);
 };
 

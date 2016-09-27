@@ -172,7 +172,7 @@ void Shader::findUniformLocations() {
 }
 
 GLint Shader::getUniformLocation(const std::string & name) {
-	uniformMap::iterator it = uniforms.find(name);
+	UniformMap::iterator it = uniforms.find(name);
 	if (it == uniforms.end()) {
 		ilog->printError("couldn't find the uniform variable: '" + name +
 			"' in the program hence it cannot be uploaded");
@@ -240,6 +240,40 @@ void Shader::uniform(const std::string & name, const glm::mat4 m) {
 
 void Shader::uniform(const std::string & name, const bool b) {
 	GLint location = getUniformLocation(name);
+	if (location == -1) return;
+	glUniform1f(location, b ? 1.0f : -1.0f);
+}
+
+GLint Shader::uniformLocation(const std::string & name) {
+	return getUniformLocation(name);
+}
+
+void Shader::uniform(const GLint location, const float f) {
+	if (location == -1) return;
+	glUniform1f(location, f);
+}
+
+void Shader::uniform(const GLint location, const glm::vec2 v) {
+	if (location == -1) return;
+	glUniform2f(location, v.x, v.y);
+}
+
+void Shader::uniform(const GLint location, const glm::vec3 v) {
+	if (location == -1) return;
+	glUniform3f(location, v.x, v.y, v.z);
+}
+
+void Shader::uniform(const GLint location, const glm::vec4 v) {
+	if (location == -1) return;
+	glUniform4f(location, v.x, v.y, v.z, v.w);
+}
+
+void Shader::uniform(const GLint location, const glm::mat4 m) {
+	if (location == -1) return;
+	glUniformMatrix4fv(location, 1, GL_FALSE, &m[0][0]);
+}
+
+void Shader::uniform(const GLint location, const bool b) {
 	if (location == -1) return;
 	glUniform1f(location, b ? 1.0f : -1.0f);
 }

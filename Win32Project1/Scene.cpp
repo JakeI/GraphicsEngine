@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "Layout.h"
 #include "InputState.h"
+#include "RootScene.h"
 
 #include "stlsort.h"
 
@@ -20,6 +21,7 @@ void Scene::RelativeMouse::set(bool isInside, int x, int y) {
 
 Scene::Scene(Scene* parent){
 	this->parent = parent;
+	this->root = parent->getRoot();
 	layout = nullptr;
 	layer = -1;
 }
@@ -72,8 +74,16 @@ void Scene::processEvent(Event* e) {
 	}
 }
 
-inline InputState* Scene::getInputState() {
-	return parent->getInputState();
+InputState* Scene::getInputState() {
+	return root->getInputState();
+}
+
+float Scene::getTime() {
+	return root->getTime();
+}
+
+RootScene* Scene::getRoot() {
+	return root;
 }
 
 void Scene::processEvnetQueue(std::queue<Event>& q)

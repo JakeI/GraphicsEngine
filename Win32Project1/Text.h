@@ -5,10 +5,11 @@
 #include "StdAfx.h"
 #include "Font.h"
 #include "ResourceManager.h"
-#include "Entity.h"
-#include "TextMesh.h"
+#include "ModelEnity.h"
+#include "TextModel.h"
+#include "ConstantAnimator.h"
 
-class Text : public Entity {
+class Text : public ModelEntity {
 private:
 
 	const static std::string resources[];
@@ -18,14 +19,19 @@ private:
 
 	bool isPacked;
 
-	TextMesh mesh;
+	TextModel* getTextModel() { return (TextModel*)model; }
+
+	ConstTextTypeScalarComp cttsc;
 
 public:
+
+	TextModel::Param param;
+
 	Text();
 	~Text();
 	void init() override;
 	void increment(float time, float deltaTime) override;
-	void render(Entity::RenderMode rm = Entity::RenderMode::PLAIN) override;
+	void render(Maths::ProjView* pv, RenderMode rm) override;
 
 	template<typename T> Text & operator<<(const T & x);
 	template<> Text & operator<< <std::string>(const std::string & x);
@@ -47,7 +53,7 @@ inline Text & Text::operator<<(const T & x) {
 }
 
 template<>
-inline Text & Text::operator<<<std::string>(const std::string & x)
+inline Text & Text::operator<< <std::string>(const std::string & x)
 {
 	isPacked = false;
 	s = s + x;

@@ -1,19 +1,16 @@
-﻿Der Buildvorgang wurde am 15.09.2016 11:17:59 gestartet.
+﻿Der Buildvorgang wurde am 27.09.2016 18:21:04 gestartet.
      1>Projekt "C:\A\C_Programme\VC++\Win32Project1\Win32Project1\Win32Project1.vcxproj" auf Knoten "2", Build Ziel(e).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GeneticRootScene.cpp
-         GeneticRootScene.cpp
-     1>c:\a\c_programme\vc++\win32project1\win32project1\geneticrootscene.cpp(16): warning C4305: "Argument": Verkürzung von "double" in "float"
-     1>c:\a\c_programme\vc++\win32project1\win32project1\geneticrootscene.cpp(28): warning C4305: "Argument": Verkürzung von "double" in "float"
-     1>c:\a\c_programme\vc++\win32project1\win32project1\geneticrootscene.cpp(33): warning C4305: "Argument": Verkürzung von "double" in "float"
-     1>c:\a\c_programme\vc++\win32project1\win32project1\geneticrootscene.cpp(172): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
-     1>c:\a\c_programme\vc++\win32project1\win32project1\geneticrootscene.cpp(173): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\A\C_Programme\VC++\Win32Project1\Debug\GeneticOptimation.exe" /INCREMENTAL /NOLOGO freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\A\C_Programme\VC++\Win32Project1\Debug\GeneticOptimation.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\A\C_Programme\VC++\Win32Project1\Debug\GeneticOptimation.lib" /MACHINE:X86 Debug\Application.obj
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\A\C_Programme\VC++\Win32Project1\Debug\GeneticOptimation.exe" /INCREMENTAL /NOLOGO freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\A\C_Programme\VC++\Win32Project1\Debug\GeneticOptimation.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\A\C_Programme\VC++\Win32Project1\Debug\GeneticOptimation.lib" /MACHINE:X86 Debug\AnimatedComponent.obj
+         Debug\Animator.obj
+         Debug\Application.obj
          Debug\Camera.obj
          Debug\Camera2.obj
+         Debug\ClampFuncs.obj
+         Debug\ConstantAnimator.obj
          Debug\ConstantLayout.obj
          Debug\Entity.obj
+         Debug\EntityComponent.obj
          Debug\Event.obj
          Debug\Font.obj
          Debug\FpsController.obj
@@ -21,10 +18,17 @@
          Debug\Globals.obj
          Debug\HorizontalLayout.obj
          Debug\Image.obj
+         Debug\ImageEntity.obj
          Debug\InfoLog.obj
          Debug\InputState.obj
+         Debug\InterpolationFuncs.obj
          Debug\Layout.obj
+         Debug\Maths.obj
+         Debug\Mdl.obj
          Debug\Mesh.obj
+         Debug\ModelEnity.obj
+         Debug\PairAnimator.obj
+         Debug\ResourceGetter.obj
          Debug\ResourceManager.obj
          Debug\RootScene.obj
          Debug\Scene.obj
@@ -34,7 +38,7 @@
          Debug\Strings.obj
          Debug\TestScene.obj
          Debug\Text.obj
-         Debug\TextMesh.obj
+         Debug\TextModel.obj
          Debug\Texture.obj
          Debug\VerticalLayout.obj
          Debug\Viewer.obj
@@ -46,4 +50,4 @@
 
 Der Buildvorgang wurde erfolgreich ausgeführt.
 
-Verstrichene Zeit 00:00:01.61
+Verstrichene Zeit 00:00:00.38

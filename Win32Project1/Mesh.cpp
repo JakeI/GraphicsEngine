@@ -1,40 +1,23 @@
 #include "Mesh.h"
 
-void Mesh::Atribute::set(int attrib, int start, int dim) {
-	if (this->isUsed()) {
-		std::stringstream ss;
-		ss << "The atribute (attrib=" << this->attrib << ", start="
-			<< this->start << ", dim=" << this->dim << ") is set another time to (attrib="
-			<< attrib << ", start=" << start << ", dim=" << dim <<
-			") that probably means that the *.data file is broken";
-		ilog->printError(ss.str());
-	}
 
-	this->attrib = attrib; 
-	this->start = start; 
-	this->dim = dim;
+
+
+Mesh::Mesh(const std::string & path) : vbo(0), target(GL_ARRAY_BUFFER), size(0) {
+	load(path);
 }
 
-Mesh::Atribute::Atribute(int attrib, int start, int dim) : Atribute() {
-	set(attrib, start, dim);
+Mesh::Mesh() : vbo(0), target(GL_ARRAY_BUFFER), size(0) {
+
 }
-
-
-Mesh::Mesh() {
-	vao = 0;
-	vbo = 0;
-	primative = GL_LINE_STRIP;
-}
-
 
 Mesh::~Mesh() {
 
 }
 
-Mesh* Mesh::readMesh(const std::string & path) {
-	Mesh* mesh = new Mesh();
-	mesh->load(path);
-	return mesh;
+void Mesh::readTarget(std::string & line, GLenum* result) {
+	if (line.find("GL_ARRAY_BUFFER") != std::string::npos) *result = GL_ARRAY_BUFFER;
+	else if (line.find("GL_ELEMENT_ARRAY_BUFFER") != std::string::npos) *result = GL_ELEMENT_ARRAY_BUFFER;
 }
 
 void Mesh::load(const std::string & path) {
@@ -42,83 +25,32 @@ void Mesh::load(const std::string & path) {
 
 	if (in.is_open()) {
 
+		std::string line;
+		while (getline(in, line)) {
+			 
+			if (line == "")
+				continue;
+
+			line = line.substr(0, line.find('#')); // stirip off comments
+
+			if (line.find("target") != std::string::npos) {
+				readTarget(line, &target);
+				break;
+			}
+		}
+
+		// TODO: add support for GL_ELEMENT_ARRAY_BUFFER to this
+
 		std::vector<float> data;
-		std::list<Atribute> atributes;
-		int stride = -1;
 
-		readPrimativeType(in);
-		readLayoutLine(in, atributes, &stride);
 		readData(in, data);
-
-		setLocations(atributes);
-
-		uploadData(data, atributes, stride);
+		uploadData(data, target);
 	}
 	else {
 		ilog->printError("The File: '" + path + "' couldn't be opend hence connot be loaded by Mesh");
 	}
 
 	in.close();
-}
-
-void Mesh::readPrimativeType(std::ifstream & in) {
-	std::string line;
-	if (getline(in, line)) {
-		if (line.find("GL_TRIANGLES") != std::string::npos) primative = GL_TRIANGLES;
-		else if (line.find("GL_QUADS") != std::string::npos) primative = GL_QUADS;
-		else {
-			ilog->printError("The Primative type '" + line + "' cannot be interpreted");
-		}
-	}
-}
-
-void Mesh::readLayoutLine(std::ifstream & in, std::list<Atribute> & atributes, int* stride) {
-	*stride = -1;
-	atributes.clear();
-
-	std::string line;
-	if (getline(in, line)) {
-		std::stringstream ss(line);
-		std::string type;
-		ss >> type;
-		if (type == std::string("layout")) {
-			std::string flag;
-			int courser = 0;
-			while (ss >> flag) {
-				if (flag == std::string("xy")) {
-					atributes.push_back(Atribute(0, courser, 2));
-					courser += 2*sizeof(float);
-				} else if (flag == std::string("uv")) {
-					atributes.push_back(Atribute(3, courser, 2));
-					courser += 2*sizeof(float);
-				} else if (flag.find("=") != std::string::npos) {
-					std::stringstream ss(flag);
-					std::string key, commandAttrib, commandDim;
-					
-					getline(ss, key, '=');
-					getline(ss, commandAttrib, ',');
-					getline(ss, commandDim);
-
-					if (key == "AtributeDimention" || key == "ad") {
-						int location = std::stoi(commandAttrib);
-						int dimention = std::stoi(commandDim);
-						atributes.push_back(Atribute(location, courser, dimention));
-						courser += dimention*sizeof(float);
-					} else {
-						ilog->printError("the layout key '" + key + "' is unknown");
-					}
-
-				} else {
-					ilog->printError("The flag '" + flag + "' in the layout is unknown");
-				}
-			}
-			*stride = courser;
-		} else {
-			ilog->printError("the line " + line + " dosen't start with the keyword 'layout'");
-		}
-	} else {
-		ilog->printError("couldn't read the lyout line");
-	}
 }
 
 void Mesh::readData(std::ifstream & in, std::vector<float> & data) {
@@ -136,23 +68,4 @@ void Mesh::readData(std::ifstream & in, std::vector<float> & data) {
 				ss.ignore();
 		}
 	}
-}
-
-void Mesh::setLocations(const std::list<Atribute> & atributes) {
-	for (auto atribute : atributes)
-		locations.push_back(atribute.attrib);
-}
-
-void Mesh::render() {
-	if (vao == 0) return;
-
-	glBindVertexArray(vao);
-
-	for (int & location : locations)
-		glEnableVertexAttribArray(location);
-
-	glDrawArrays(primative, 0, count);
-
-	for (int & location : locations)
-		glDisableVertexAttribArray(location);
 }

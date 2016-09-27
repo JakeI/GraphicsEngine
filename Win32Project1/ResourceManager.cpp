@@ -1,5 +1,11 @@
 #include "ResourceManager.h"
 
+#include "Shader.h"
+#include "Model.h"
+#include "Mesh.h"
+#include "Texture.h"
+#include "Font.h"
+
 ResourceManager* ResourceManager::globalResourceManager = new ResourceManager;
 
 ResourceManager::ResourceType ResourceManager::getResourceType(const std::string & path) {
@@ -25,8 +31,10 @@ ResourceManager::ResourceType ResourceManager::getResourceType(const std::string
 	bool correctlyFormatted = true;
 
 	correctlyFormatted = correctlyFormatted && it != folders.end();
-	it++;
-	correctlyFormatted = correctlyFormatted && it != folders.end();
+	if (correctlyFormatted) {
+		it++;
+		correctlyFormatted = correctlyFormatted && it != folders.end();
+	}
 
 	if (!correctlyFormatted)
 		return RESOURCE_ERROR;
@@ -70,11 +78,10 @@ void ResourceManager::LoadResource(const std::string & path, ResourceRecord* rr)
 		rr->set(TEXTURE, new Texture(path));
 		return;
 	case MESH:
-		rr->set(MODEL, (void*) Mesh::readMesh(path));
+		rr->set(MODEL, (void*) new Mesh(path));
 		return;
 	case MODEL:
-		rr->type = RESOURCE_ERROR;
-		ilog->printError("Can't load resource: '" + path + "' because resources of type MODEL are not yet implemented");
+		rr->set(MODEL, (void*) new Model(path));
 		return;
 	case FONT:
 		rr->set(FONT, (void*) new Font(path));

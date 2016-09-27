@@ -1,29 +1,29 @@
 #pragma once
 
 #include "StdAfx.h"
+#include "Shader.h"
 #include "EntityComponent.h"
+#include "Maths.h"
+#include "RenderMode.h"
+
+using namespace rem;
 
 class Entity
 {
-private:
+
+protected:
 	
-	struct ComponentRecord { 
-		bool allocated; 
-		EntityComponent* ec; 
-		ComponentRecord(bool allocated, EntityComponent* ec) { this->allocated = allocated; this->ec = ec; }
-	};
-	std::map<EntityComponent::Type, ComponentRecord> components;
+	std::map<EntityComponent::Type, EntityComponent*> components;
 
 public:
 	Entity();
 	~Entity();
 
 	void add(EntityComponent* ec);
-	void add(const EntityComponent & ec);
 
 	virtual void init() {}
-	virtual void increment(float time, float deltaTime) {}
-	enum RenderMode { PLAIN };
-	virtual void render(RenderMode rm = PLAIN) {}
+	virtual void increment(float time, float deltaTime);
+	virtual void render(Maths::ProjView* pv, RenderMode rm) {}
+	virtual void uploadUniforms(Shader* shader, RenderMode rm, void* param) {}
 };
 

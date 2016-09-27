@@ -150,10 +150,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedComponent.cpp" />
+    <ClCompile Include="Animator.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Camera2.cpp" />
-    <ClCompile Include="ColorComponent.cpp" />
+    <ClCompile Include="ClampFuncs.cpp" />
+    <ClCompile Include="ConstantAnimator.cpp" />
     <ClCompile Include="ConstantLayout.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityComponent.cpp" />
@@ -164,10 +167,17 @@
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="HorizontalLayout.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="ImageEntity.cpp" />
     <ClCompile Include="InfoLog.cpp" />
     <ClCompile Include="InputState.cpp" />
+    <ClCompile Include="InterpolationFuncs.cpp" />
     <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="Maths.cpp" />
+    <ClCompile Include="Mdl.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="ModelEnity.cpp" />
+    <ClCompile Include="PairAnimator.cpp" />
+    <ClCompile Include="ResourceGetter.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RootScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -177,10 +187,8 @@
     <ClCompile Include="Strings.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Text.cpp" />
-    <ClCompile Include="TextMesh.cpp" />
+    <ClCompile Include="TextModel.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="Transform2.cpp" />
     <ClCompile Include="VerticalLayout.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="Viewer2.cpp" />
@@ -188,10 +196,13 @@
     <ClCompile Include="WeightedLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedComponent.h" />
+    <ClInclude Include="Animator.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Camera2.h" />
-    <ClInclude Include="ColorComponent.h" />
+    <ClInclude Include="ClampFuncs.h" />
+    <ClInclude Include="ConstantAnimator.h" />
     <ClInclude Include="ConstantLayout.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityComponent.h" />
@@ -202,10 +213,18 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="HorizontalLayout.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="ImageEntity.h" />
     <ClInclude Include="InfoLog.h" />
     <ClInclude Include="InputState.h" />
+    <ClInclude Include="InterpolationFuncs.h" />
     <ClInclude Include="Layout.h" />
+    <ClInclude Include="Maths.h" />
+    <ClInclude Include="Mdl.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="ModelEnity.h" />
+    <ClInclude Include="PairAnimator.h" />
+    <ClInclude Include="RenderMode.h" />
+    <ClInclude Include="ResourceGetter.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="RootScene.h" />
     <ClInclude Include="Scene.h" />
@@ -217,10 +236,8 @@
     <ClInclude Include="Strings.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="Text.h" />
-    <ClInclude Include="TextMesh.h" />
+    <ClInclude Include="TextModel.h" />
     <ClInclude Include="Texture.h" />
-    <ClInclude Include="Transform.h" />
-    <ClInclude Include="Transform2.h" />
     <ClInclude Include="VerticalLayout.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="Viewer2.h" />

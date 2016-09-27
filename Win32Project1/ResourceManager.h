@@ -2,11 +2,12 @@
 
 #include "StdAfx.h"
 #include "InfoLog.h"
-#include "Shader.h"
-#include "Model.h"
-#include "Mesh.h"
-#include "Texture.h"
-#include "Font.h"
+
+class Shader;
+class Model;
+class Mesh;
+class Texture;
+class Font;
 
 
 class ResourceManager

@@ -1,0 +1,17 @@
+
+Mode FULL
+	primative GL_QUADS
+	shader "res/shaders/textured"
+	range from 0 to end("res/meshs/quad.mesh")
+	
+	texture "res/textures/mona_lisa.png"
+
+	mesh "res/meshs/quad.mesh" layout ad=0,2
+	mesh "res/meshs/texture11.mesh" layout ad=3,2
+	
+Mode UNIFORM
+	primative GL_QUADS
+	shader "res/shaders/uniformColor"
+	range from 0 to end("res/meshs/quad.mesh")
+	
+	mesh "res/meshs/quad.mesh" layout ad=0,2

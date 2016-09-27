@@ -1,0 +1,8 @@
+
+
+Mode UNIFORM
+	primative GL_TRIANGLES
+	shader "res/shaders/uniformColor"
+	range from 0 to end("res/mesh/qube.mesh")
+
+	mesh "res/meshs/qube.mesh" layout ad=0,3

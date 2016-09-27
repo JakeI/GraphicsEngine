@@ -5,6 +5,7 @@
 #include "Event.h"
 
 class Layout;
+class RootScene;
 
 #define LAYER_BOTTOM	-1
 
@@ -13,6 +14,7 @@ class Scene
 private:
 
 	Scene* parent;
+	RootScene* root;
 	int layer;
 
 	std::list<Scene*> children;
@@ -23,7 +25,9 @@ protected:
 
 	virtual void processEvent(Event* e);
 
-	inline virtual InputState* getInputState();
+	virtual InputState* getInputState();
+	virtual float getTime();
+	virtual RootScene* getRoot();
 
 public:
 

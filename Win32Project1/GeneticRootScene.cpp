@@ -13,7 +13,7 @@ GeneticRootScene::GeneticRootScene() : RootScene()
 	
 	constantLayout = new ConstantLayout();
 
-	tsCenter = new TestScene(this, glm::vec4(0.0f, 1.0f, 1.0f, 1.0f), 0.0f, M_PI / 4000.0f);
+	tsCenter = new TestScene(this, glm::vec4(0.0f, 1.0f, 1.0f, 1.0f), 0.1f, M_PI / 4000.0f);
 	add(tsCenter);
 	constantLayout->add(tsCenter, ConstantLayout::Info(ConstantLayout::Info::PlacementMode::TOP_LEFT, 160, 100));
 	tsCenter->setLayer(1);
@@ -73,7 +73,8 @@ void GeneticRootScene::render(RenderMode rm)
 
 	if (is->mouse.isLdown()) {
 
-		glViewport(0, 0, is->windowSize.w, is->windowSize.h);
+		//glViewport(0, 0, is->windowSize.w, is->windowSize.h);
+		glViewport(dimention.x, dimention.y, dimention.w, dimention.h);
 
 		glEnable(GL_DEPTH_TEST);
 

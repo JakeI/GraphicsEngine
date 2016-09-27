@@ -4,7 +4,7 @@
 
 Camera2::Camera2() :
 	center(0.0f, 0.0f, 3.0f, -3.0f, -3.0f, 3.0f),//center(0.0f, 0.0f, 100.0f, -100.0f, -100.0f, 100.0f),
-	dragSpeed(5.0f),
+	dragSpeed(3.0f),
 	scale(0.2f, 5.0f, 1.0f),
 	scaleSpeed(0.001f)
 {

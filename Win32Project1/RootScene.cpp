@@ -14,11 +14,19 @@ void RootScene::setPreferedDimention(const glm::ivec2 & d) {
 	preferedDim = d;
 }
 
-inline InputState* RootScene::getInputState() {
+InputState* RootScene::getInputState() {
 	return inputState;
 }
 
-RootScene::RootScene() : Scene(NULL) {
+float RootScene::getTime() {
+	return time;
+}
+
+RootScene* RootScene::getRoot() {
+	return this;
+}
+
+RootScene::RootScene() : Scene(this) {
 	inputState = new InputState();
 }
 
@@ -41,4 +49,9 @@ void RootScene::sizeChanged(int w, int h) {
 
 void RootScene::updateLayout() {
 	resize(dimention.x, dimention.y, dimention.w, dimention.h);
+}
+
+void RootScene::increment(float time, float deltaTime) {
+	this->time = time;
+	Scene::increment(time, deltaTime);
 }

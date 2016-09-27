@@ -7,16 +7,17 @@ class RootScene : public Scene
 {
 private:
 	InputState* inputState;
+	float time;
 
 	void processEvent(Event* e) override;
 
 	glm::ivec2 preferedDim;
 
-protected:
-
-	inline InputState* getInputState() override;
-
 public:
+
+	InputState* getInputState() override;
+	float getTime() override;
+	RootScene* getRoot() override;
 
 	glm::ivec2 & getPreferedDimention();
 	void setPreferedDimention(const glm::ivec2 & d);
@@ -25,6 +26,8 @@ public:
 	void deleteMemory();
 	RootScene();
 	~RootScene();
+
+	void increment(float time, float deltaTime) override;
 
 	void sizeChanged(int w, int h) override;
 	void updateLayout();

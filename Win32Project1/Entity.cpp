@@ -1,27 +1,20 @@
 #include "Entity.h"
 
 
-
 Entity::Entity()
 {
 }
 
 
 Entity::~Entity(){
-	for (std::map<EntityComponent::Type, ComponentRecord>::iterator it = components.begin();
-			it != components.end(); ++it) {
-		if (it->second.allocated) {
-			delete it->second.ec;
-		}
-		components.erase(it);!!!
-	}
+	components.clear();
 }
 
 void Entity::add(EntityComponent* ec) {
-	components[ec->getType()] = ComponentRecord(false, ec);
+	components[ec->getType()] = ec;
 }
 
-void Entity::add(const EntityComponent & ec) {
-	EntityComponent* myec = new EntityComponent(ec);
-	components[myec->getType()] = ComponentRecord(true, myec);
+void Entity::increment(float time, float deltaTime) {
+	for (auto pair : components)
+		pair.second->increment(time, deltaTime);
 }

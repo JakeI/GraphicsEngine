@@ -93,9 +93,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="TextMesh.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Viewer.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -114,13 +111,40 @@
     <ClCompile Include="EntityComponent.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Transform2.cpp">
+    <ClCompile Include="ModelEnity.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Transform.cpp">
+    <ClCompile Include="Maths.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="ColorComponent.cpp">
+    <ClCompile Include="Animator.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantAnimator.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ClampFuncs.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Mdl.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceGetter.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="TextModel.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageEntity.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedComponent.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PairAnimator.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="InterpolationFuncs.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -209,9 +233,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="TextMesh.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Viewer.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -230,13 +251,43 @@
     <ClInclude Include="EntityComponent.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Transform2.h">
+    <ClInclude Include="ModelEnity.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h">
+    <ClInclude Include="Maths.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="ColorComponent.h">
+    <ClInclude Include="RenderMode.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantAnimator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ClampFuncs.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Mdl.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceGetter.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="TextModel.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageEntity.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedComponent.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PairAnimator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="InterpolationFuncs.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

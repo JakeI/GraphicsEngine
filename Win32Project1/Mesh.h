@@ -21,59 +21,52 @@ class Mesh
 private:
 
 	void load(const std::string & path);
-
-	
 	void readData(std::ifstream & in, std::vector<float> & data);
-
-protected:
-
-	GLuint vbo;
-	int count;
-
-	template<class T>
-	void uploadData(const std::vector<T> & data, const std::list<Atribute> & atributes, const int stride, GLenum usage = GL_STATIC_DRAW);
+	void readTarget(std::string & line, GLenum* result);
 
 public:
+
+	template<class T>
+	void uploadData(const std::vector<T> & data, GLenum target = GL_ARRAY_BUFFER, GLenum usage = GL_STATIC_DRAW);
+
+	GLuint vbo;
+	GLenum target;
+	int size; // in 4 byte blocks
+
+	inline void bind() { glBindBuffer(target, vbo); }
+
+	Mesh(const std::string & path);
 	Mesh();
 	~Mesh();
-
-	static Mesh* readMesh(const std::string & path);
 };
 
 
 
 // For some reason this only works if its in the header file
 template<class T>
-void Mesh::uploadData(const std::vector<T> & data, const std::list<Atribute> & atributes, const int stride, GLenum usage) {
+void Mesh::uploadData(const std::vector<T> & data, GLenum target, GLenum usage) {
 
 	if (data.size() == 0) {
-		count = 0;
+		size = 0;
 		return;
 	}
 
-	const int countPdata = stride / sizeof(T);
-	count = data.size() / countPdata;
+	size = data.size() * sizeof(T);
 
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
+	if (vbo == 0) {
+		glGenBuffers(1, &vbo);
+		glBindBuffer(target, vbo);
+	}
+	else {
+		glBindBuffer(target, vbo);
+		// maybe the buffer needs to be cleared somehow???
+	}
 
-	glGenBuffers(1, &vbo);
+	glBufferData(target, size, &data[0], usage);
 
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, data.size()*sizeof(T), &data[0], usage);
+	// TODO: make this more efficient using glBufferSubData to send aditional data and only rarly allocate memory with glBufferData
 
-	for (auto atribute : atributes)
-		glEnableVertexAttribArray(atribute.attrib);
-
-	for (auto atribute : atributes)
-		glVertexAttribPointer(atribute.attrib, atribute.dim, GL_FLOAT, GL_FALSE,
-			stride, (void*)(atribute.start));
-
-	for (auto atribute : atributes)
-		glDisableVertexAttribArray(atribute.attrib);
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
+	glBindBuffer(target, 0);
 }
 
 

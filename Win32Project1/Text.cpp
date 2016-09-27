@@ -1,22 +1,27 @@
 #include "Text.h"
 
 const std::string Text::resources[] = {
-	"res/shaders/textUniform",
 	"res/fonts/georgia.fnt",
 };
 const int Text::resourcesCount = sizeof(Text::resources) / sizeof(std::string);
 
-Text::Text() : 
-	isPacked(false) 
+Text::Text() :
+	ModelEntity(new TextModel()),
+	isPacked(false),
+	param(),
+	cttsc()
 {
-
+	cttsc.getAnimator()->setValue(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
+	add(&cttsc);
 }
 
 Text::~Text() {
 	resm->releaseResources(resources, resourcesCount);
+	delete getTextModel();
 }
 
 void Text::init() {
+	getTextModel()->init();
 	resm->prepareResources(resources, resourcesCount);
 }
 
@@ -24,36 +29,20 @@ void Text::increment(float time, float deltaTime) {
 
 }
 
-void Text::render(Entity::RenderMode rm) {
-	switch (rm) {
-	case Entity::RenderMode::PLAIN:
-		{
-			if (!isPacked) {
-				pack();
-			}
-
-			glEnable(GL_BLEND);
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-			Shader* shader = (Shader*)resm->getResource("res/shaders/textUniform");
-			shader->use();
-
-			shader->uniform("mvp", glm::mat4(1.0f));
-
-			Font* font = (Font*)resm->getResource("res/fonts/georgia.fnt");
-			font->texture->bind(GL_TEXTURE_2D);
-
-			mesh.param.upload(shader);
-			mesh.render();
-
-			glBindTexture(GL_TEXTURE_2D, 0);
-
-			glUseProgram(0);
-
-			glDisable(GL_BLEND);
-		}
-		break;
+void Text::render(Maths::ProjView* pv, RenderMode rm) {
+	
+	if (!isPacked) {
+		pack();
 	}
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	//getTextModel()->setTexturePtr(FULL, ((Font*)resm->getResource("res/fonts/georgia.fnt"))->texture);
+	
+	ModelEntity::render(pv, rm);
+
+	glDisable(GL_BLEND);
 }
 
 void Text::clearText() {
@@ -73,7 +62,11 @@ void Text::pack() {
 	// TODO improve this later
 	
 	Font* font = (Font*)resm->getResource("res/fonts/georgia.fnt");
-	mesh.pack(font, s);
+	Font::FontPart* fp = font->getFontPart(param.type);
+	cttsc.getAnimator()->setValue(fp->scalar);
+	getTextModel()->setTexturePtr(FULL, font->texture);
+
+	getTextModel()->pack(fp, &param, s);
 
 	isPacked = true;
 }

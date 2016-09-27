@@ -1,34 +1,60 @@
 #include "TestScene.h"
 
-const std::string TestScene::resources[] = {
-	"res/meshs/arrow2d.data",
-	"res/meshs/quad.data",
-	"res/shaders/uniformColor",
-	"res/meshs/texture_quad.data",
-	"res/textures/mona_lisa.png",
-	"res/shaders/textured",
-	"res/meshs/cross.data",
-};
-const int TestScene::resourceCount = sizeof(TestScene::resources) / sizeof(std::string);
+#include "ClampFuncs.h"
 
-TestScene::TestScene(Scene* parent, const glm::vec4 & color, float rotation, float angular) : Scene(parent)
+/*const std::string TestScene::resources[] = {
+	//"res/meshs/arrow2d.data",
+	//"res/meshs/quad.data",
+	//"res/shaders/uniformColor",
+	//"res/meshs/texture_quad.data",
+	//"res/textures/mona_lisa.png",
+	//"res/shaders/textured",
+	//"res/meshs/cross.data",
+};
+const int TestScene::resourceCount = sizeof(TestScene::resources) / sizeof(std::string);*/
+
+TestScene::TestScene(Scene* parent, const glm::vec4 & color, float rotation, float angular) :
+	Scene(parent),
+	background("res/models/quad.mdl"),
+	mona("res/models/mona.mdl")
 {
-	this->color = color;
-	this->rotation = rotation;
-	this->angular = angular;
+	background.color.getAnimator()->set(glm::vec4(color.r, color.g, color.b, 0.0f), color);
+	background.color.getAnimator()->setLength(500.0f);
+	background.color.getAnimator()->setClampFunc(ClampFuncs::clmap01);
+	background.entity.add(&background.color);
+	background.transform.getAnimator()->setValue(Maths::Transform2());
+	background.entity.add(&background.transform);
+
+	mona.transform.getAnimator()->setValue(Maths::Transform2());
+	mona.entity.add(&mona.transform);
+	mona.color.getAnimator()->setValue(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	mona.entity.add(&mona.color);
 }
 
 
 TestScene::~TestScene()
 {
-	resm->releaseResources(TestScene::resources, TestScene::resourceCount);
+	//resm->releaseResources(TestScene::resources, TestScene::resourceCount);
 }
 
 void TestScene::render(RenderMode rm) {
 	Scene::render(rm);
 
 	glViewport(dimention.x, dimention.y, dimention.w, dimention.h);
+
 	glDisable(GL_DEPTH_TEST);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	Maths::ProjView pv;
+	background.entity.render(&pv, UNIFORM);
+	pv.proj = getProjection(STD2);
+	pv.update();
+	mona.entity.render(&pv, FULL);
+
+	glDisable(GL_BLEND);
+
+	/*glDisable(GL_DEPTH_TEST);
 	//glEnable(GL_BLEND);
 	//glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
 	glDisable(GL_BLEND);
@@ -99,26 +125,40 @@ void TestScene::render(RenderMode rm) {
 	glDisable(GL_BLEND);
 	glUseProgram(0);
 
-	text.render();
+	text.render();*/
 }
 
 void TestScene::init() {
 	Scene::init();
 
-	resm->prepareResources(TestScene::resources, TestScene::resourceCount);
+	background.entity.init();
+	mona.entity.init();
 
-	text.init();
+	/*resm->prepareResources(TestScene::resources, TestScene::resourceCount);
+
+	text.init();*/
+}
+
+void TestScene::mouseLdown(int x, int y) {
+	if (mouse.isInside) {
+		background.color.getAnimator()->swap();
+		background.color.getAnimator()->setStart(getTime());
+	}
 }
 
 void TestScene::increment(float time, float deltaTime) {
 	Scene::increment(time, deltaTime);
-	rotation += angular*deltaTime;
+	
+	background.entity.increment(time, deltaTime);
+	mona.entity.increment(time, deltaTime);
+
+	//rotation += angular*deltaTime;
 }
 
 void TestScene::charDown(char c) {
 	Scene::charDown(c);
 
-	if (mouse.isInside) {
+	/*if (mouse.isInside) {
 
 		switch (c) {
 		case 0x08: // backspace
@@ -130,9 +170,7 @@ void TestScene::charDown(char c) {
 		case 0x1B: // escape
 
 			break;
-		/*case 0x09: // tab
-
-			break;*/
+		// case 0x09: break; // tab
 		case 0x0D: // carriage return
 			text << '\n';
 			break;
@@ -158,5 +196,5 @@ void TestScene::charDown(char c) {
 				text << (char)std::tolower(c);
 			text.pack();
 		}*/
-	}
+	//}
 }

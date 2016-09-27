@@ -4,9 +4,9 @@
 #include "Mesh.h"
 #include "Font.h"
 #include "Shader.h"
+#include "Model.h"
 
-class TextMesh :
-	public Mesh
+class TextModel : public Model
 {
 public:
 
@@ -16,20 +16,14 @@ public:
 		glm::vec2 advance;
 		float italic;
 		float lineNum;
-
-		glm::vec4 typeScalar;
 		glm::vec3 position;
-		glm::vec4 bodyColor;
-		glm::vec4 outlineColor;
-		glm::vec3 edges;
-		glm::vec4 shaddowColor;
-		glm::vec4 shaddowParam;
-		glm::vec4 backgroundColor;
+
 		Param();
-		void upload(Shader* shader);
-	} param;
+	};
 
 private:
+
+	Mesh mesh;
 
 	struct Vertex {
 		float x, y, z; // position
@@ -39,18 +33,19 @@ private:
 		inline void setTextureUV(const glm::vec2 uv) { u = uv.x; v = uv.y; }
 	};
 
-	void createAttribList(std::list<Mesh::Atribute> & attributes);
-	void addChar(const char c, std::vector<Vertex> & data, glm::vec2* courser, Param* param, Font* font);
+	void addChar(const char c, std::vector<Vertex> & data, glm::vec2* courser, Param* param, Font::FontPart* fp);
 	void setTextureUVs(Vertex* v, Font::FontPart::Character* ch);
 	void setPositions(Vertex* v, Font::FontPart* fp, Font::FontPart::Character* ch, 
 		const glm::vec2* courser, const Param* param);
 
 public:
 
-	TextMesh();
-	~TextMesh();
+	TextModel();
+	~TextModel();
 
-	void pack(Font* font, std::string & s);
+	void init();
+
+	void pack(Font::FontPart* fp, Param* p, std::string & s);
 };
 
 
