@@ -4,7 +4,7 @@ This is a work in progress but eventually it will be a two and three dimentional
 
 ## Current features
 * Scenes (fundamental drawing objecs) can be organised in a Tree
-* User Input (throu the WinApi) taken in seprate thread and and processed by a drawing thread _//TODO: make the eventque thread save_
+* User Input (throu the WinApi) taken in seprate thread and and processed by a drawing thread _//TODO: make the eventqueue thread save_
 * Stabel frame rate
 * A resource management system
 * Wrappers/loaders form basic OpenGL data (meshes, models, textures)
