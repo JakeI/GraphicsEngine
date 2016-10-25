@@ -1,0 +1,149 @@
+﻿Der Buildvorgang wurde am 23.10.2016 14:30:53 gestartet.
+     1>Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\SceneBasedGraphics\SceneBasedGraphics.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt AnimatedComponent.cpp Animator.cpp Application.cpp Arrow.cpp Atlas.cpp Button.cpp ButtonEntity.cpp Camera.cpp Camera2.cpp ClampFuncs.cpp ConstantAnimator.cpp ConstantLayout.cpp Entity.cpp EntityComponent.cpp Event.cpp Font.cpp FpsController.cpp GeneticRootScene.cpp Globals.cpp HorizontalLayout.cpp Image.cpp ImageEntity.cpp InfoLog.cpp InputState.cpp InterpolationFuncs.cpp Layout.cpp Maths.cpp Mdl.cpp Mesh.cpp ModelEntity.cpp PairAnimator.cpp Resource.cpp ResourceBuffer.cpp ResourceManager.cpp ResourceRef.cpp RootScene.cpp Scene.cpp main.cpp Shader.cpp Model.cpp Strings.cpp TestScene.cpp Text.cpp TextModel.cpp Texture.cpp TextureEx.cpp VerticalLayout.cpp Viewer.cpp Viewer2.cpp ViewerTest.cpp WeightedLayout.cpp
+         AnimatedComponent.cpp
+         Animator.cpp
+         Application.cpp
+         Arrow.cpp
+         Atlas.cpp
+         Button.cpp
+         ButtonEntity.cpp
+         Camera.cpp
+         Camera2.cpp
+         ClampFuncs.cpp
+         ConstantAnimator.cpp
+         ConstantLayout.cpp
+         Entity.cpp
+         EntityComponent.cpp
+         Event.cpp
+         Font.cpp
+     1>Font.cpp(119): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>Font.cpp(120): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>Font.cpp(122): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>Font.cpp(124): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>Font.cpp(248): warning C4101: "r": Unreferenzierte lokale Variable
+         FpsController.cpp
+         GeneticRootScene.cpp
+         Globals.cpp
+         HorizontalLayout.cpp
+         Kompilieren...
+         Image.cpp
+         ImageEntity.cpp
+         InfoLog.cpp
+         InputState.cpp
+     1>InputState.cpp(38): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>InputState.cpp(42): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>InputState.cpp(46): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+     1>InputState.cpp(83): warning C4800: "unsigned int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+         InterpolationFuncs.cpp
+         Layout.cpp
+         Maths.cpp
+         Mdl.cpp
+     1>Mdl.cpp(190): warning C4244: "Initialisierung": Konvertierung von "std::streamoff" in "int", möglicher Datenverlust
+     1>Mdl.cpp(230): warning C4244: "=": Konvertierung von "std::streamoff" in "int", möglicher Datenverlust
+         Mesh.cpp
+         ModelEntity.cpp
+         PairAnimator.cpp
+         Resource.cpp
+         ResourceBuffer.cpp
+         ResourceManager.cpp
+         ResourceRef.cpp
+         RootScene.cpp
+         Scene.cpp
+         main.cpp
+         Shader.cpp
+         Model.cpp
+         Kompilieren...
+         Strings.cpp
+         TestScene.cpp
+         Text.cpp
+         TextModel.cpp
+         Texture.cpp
+         TextureEx.cpp
+         VerticalLayout.cpp
+         Viewer.cpp
+         Viewer2.cpp
+         ViewerTest.cpp
+     1>ViewerTest.cpp(210): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+     1>ViewerTest.cpp(213): warning C4244: "Argument": Konvertierung von "double" in "const float", möglicher Datenverlust
+     1>ViewerTest.cpp(215): warning C4244: "Argument": Konvertierung von "double" in "const float", möglicher Datenverlust
+     1>ViewerTest.cpp(217): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+     1>ViewerTest.cpp(219): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+     1>ViewerTest.cpp(220): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+         WeightedLayout.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\A\C_Programme\VC++\SceneBasedGraphics\Release\SceneBasedGraphics.exe" /INCREMENTAL:NO /NOLOGO freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\A\C_Programme\VC++\SceneBasedGraphics\Release\SceneBasedGraphics.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\A\C_Programme\VC++\SceneBasedGraphics\Release\SceneBasedGraphics.lib" /MACHINE:X86 /SAFESEH Release\AnimatedComponent.obj
+         Release\Animator.obj
+         Release\Application.obj
+         Release\Arrow.obj
+         Release\Atlas.obj
+         Release\Button.obj
+         Release\ButtonEntity.obj
+         Release\Camera.obj
+         Release\Camera2.obj
+         Release\ClampFuncs.obj
+         Release\ConstantAnimator.obj
+         Release\ConstantLayout.obj
+         Release\Entity.obj
+         Release\EntityComponent.obj
+         Release\Event.obj
+         Release\Font.obj
+         Release\FpsController.obj
+         Release\GeneticRootScene.obj
+         Release\Globals.obj
+         Release\HorizontalLayout.obj
+         Release\Image.obj
+         Release\ImageEntity.obj
+         Release\InfoLog.obj
+         Release\InputState.obj
+         Release\InterpolationFuncs.obj
+         Release\Layout.obj
+         Release\Maths.obj
+         Release\Mdl.obj
+         Release\Mesh.obj
+         Release\ModelEntity.obj
+         Release\PairAnimator.obj
+         Release\Resource.obj
+         Release\ResourceBuffer.obj
+         Release\ResourceManager.obj
+         Release\ResourceRef.obj
+         Release\RootScene.obj
+         Release\Scene.obj
+         Release\main.obj
+         Release\Shader.obj
+         Release\Model.obj
+         Release\Strings.obj
+         Release\TestScene.obj
+         Release\Text.obj
+         Release\TextModel.obj
+         Release\Texture.obj
+         Release\TextureEx.obj
+         Release\VerticalLayout.obj
+         Release\Viewer.obj
+         Release\Viewer2.obj
+         Release\ViewerTest.obj
+         Release\WeightedLayout.obj
+         Code wird generiert.
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\image.cpp(31): warning C4715: "Image::getFormatGL": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\constantlayout.cpp(30): warning C4715: "ConstantLayout::Info::copy": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\scene.cpp(169): warning C4715: "Scene::getProjection": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\atlas.cpp(27): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+     1>c:\a\c_programme\vc++\scenebasedgraphics\scenebasedgraphics\animator.h(24): warning C4723: Mögliche Division durch 0 (Null)
+         All 3948 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         Codegenerierung ist abgeschlossen.
+         SceneBasedGraphics.vcxproj -> C:\A\C_Programme\VC++\SceneBasedGraphics\Release\SceneBasedGraphics.exe
+     1>Die Erstellung von Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\SceneBasedGraphics\SceneBasedGraphics.vcxproj" ist abgeschlossen (Build Ziel(e)).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+
+Verstrichene Zeit 00:00:55.07

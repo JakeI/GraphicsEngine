@@ -1,0 +1,6 @@
+Check = 0 126 62 62
+Disabled = 0 0 126 62
+Error = 0 189 62 62
+Hover = 0 63 126 62
+Klicked = 127 0 126 62
+Standard = 127 63 126 62

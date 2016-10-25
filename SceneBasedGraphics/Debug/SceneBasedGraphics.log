@@ -1,0 +1,61 @@
+﻿Der Buildvorgang wurde am 25.10.2016 21:25:34 gestartet.
+     1>Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\SceneBasedGraphics\SceneBasedGraphics.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (GeneticOptimation.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\A\C_Programme\VC++\SceneBasedGraphics\Debug\SceneBasedGraphics.lib" /NOLOGO Debug\AnimatedComponent.obj
+         Debug\Animator.obj
+         Debug\Application.obj
+         Debug\Arrow.obj
+         Debug\Atlas.obj
+         Debug\Button.obj
+         Debug\ButtonEntity.obj
+         Debug\Camera.obj
+         Debug\Camera2.obj
+         Debug\ClampFuncs.obj
+         Debug\ConstantAnimator.obj
+         Debug\ConstantLayout.obj
+         Debug\Entity.obj
+         Debug\EntityComponent.obj
+         Debug\Event.obj
+         Debug\Font.obj
+         Debug\FpsController.obj
+         Debug\Globals.obj
+         Debug\HorizontalLayout.obj
+         Debug\Image.obj
+         Debug\ImageEntity.obj
+         Debug\InfoLog.obj
+         Debug\InputState.obj
+         Debug\InterpolationFuncs.obj
+         Debug\Layout.obj
+         Debug\Maths.obj
+         Debug\Mdl.obj
+         Debug\Mesh.obj
+         Debug\ModelEntity.obj
+         Debug\PairAnimator.obj
+         Debug\Resource.obj
+         Debug\ResourceBuffer.obj
+         Debug\ResourceManager.obj
+         Debug\ResourceRef.obj
+         Debug\RootScene.obj
+         Debug\Scene.obj
+         Debug\Shader.obj
+         Debug\Model.obj
+         Debug\Strings.obj
+         Debug\Text.obj
+         Debug\TextModel.obj
+         Debug\Texture.obj
+         Debug\TextureEx.obj
+         Debug\VerticalLayout.obj
+         Debug\Viewer.obj
+         Debug\Viewer2.obj
+         Debug\WeightedLayout.obj
+     1>ResourceRef.obj : warning LNK4221: Die Objektdatei definiert keine zuvor undefinierten ÷ffentlichen Symbole. Sie wird daher von keinem Verkn³pfungsvorgang verwendet, der diese Bibliothek benutzt.
+     1>ConstantAnimator.obj : warning LNK4221: Die Objektdatei definiert keine zuvor undefinierten ÷ffentlichen Symbole. Sie wird daher von keinem Verkn³pfungsvorgang verwendet, der diese Bibliothek benutzt.
+     1>Arrow.obj : warning LNK4221: Die Objektdatei definiert keine zuvor undefinierten ÷ffentlichen Symbole. Sie wird daher von keinem Verkn³pfungsvorgang verwendet, der diese Bibliothek benutzt.
+     1>Animator.obj : warning LNK4221: Die Objektdatei definiert keine zuvor undefinierten ÷ffentlichen Symbole. Sie wird daher von keinem Verkn³pfungsvorgang verwendet, der diese Bibliothek benutzt.
+         SceneBasedGraphics.vcxproj -> C:\A\C_Programme\VC++\SceneBasedGraphics\Debug\SceneBasedGraphics.lib
+     1>Die Erstellung von Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\SceneBasedGraphics\SceneBasedGraphics.vcxproj" ist abgeschlossen (Build Ziel(e)).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+
+Verstrichene Zeit 00:00:01.39

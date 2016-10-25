@@ -1,0 +1,97 @@
+﻿Der Buildvorgang wurde am 23.10.2016 15:38:10 gestartet.
+     1>Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\TestCases\TestCases.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GeneticRootScene.cpp main.cpp TestScene.cpp ViewerTest.cpp
+         GeneticRootScene.cpp
+         main.cpp
+         TestScene.cpp
+         ViewerTest.cpp
+     1>ViewerTest.cpp(210): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+     1>ViewerTest.cpp(213): warning C4244: "Argument": Konvertierung von "double" in "const float", möglicher Datenverlust
+     1>ViewerTest.cpp(215): warning C4244: "Argument": Konvertierung von "double" in "const float", möglicher Datenverlust
+     1>ViewerTest.cpp(217): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+     1>ViewerTest.cpp(219): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+     1>ViewerTest.cpp(220): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\A\C_Programme\VC++\SceneBasedGraphics\Release\TestCases.exe" /INCREMENTAL:NO /NOLOGO freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\A\C_Programme\VC++\SceneBasedGraphics\Release\TestCases.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\A\C_Programme\VC++\SceneBasedGraphics\Release\TestCases.lib" /MACHINE:X86 /SAFESEH Release\GeneticRootScene.obj
+         Release\main.obj
+         Release\TestScene.obj
+         Release\ViewerTest.obj
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual struct glm::tmat4x4<float,0> __thiscall Maths::Transform2::getMat(void)" (?getMat@Transform2@Maths@@UAE?AU?$tmat4x4@M$0A@@glm@@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall VerticalLayout::~VerticalLayout(void)" (??1VerticalLayout@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall VerticalLayout::VerticalLayout(void)" (??0VerticalLayout@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall ResourceManager::releaseResources(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const *,int)" (?releaseResources@ResourceManager@@QAEXPBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: class Resource * __thiscall ResourceManager::getResource(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,short *)" (?getResource@ResourceManager@@QAEPAVResource@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAF@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall ResourceManager::prepareResources(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const *,int,bool)" (?prepareResources@ResourceManager@@QAEXPBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Button::Button(class Scene *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Button@@QAE@PAVScene@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Shader::uniform(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::tmat4x4<float,0>)" (?uniform@Shader@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$tmat4x4@M$0A@@glm@@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Shader::use(void)" (?use@Shader@@QAEXXZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall EntityComponent::~EntityComponent(void)" (??1EntityComponent@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Scene::add(class Scene *)" (?add@Scene@@QAEXPAV1@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Scene::render(enum Scene::RenderMode)" (?render@Scene@@UAEXW4RenderMode@1@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Scene::resize(int,int,int,int)" (?resize@Scene@@UAEXHHHH@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Scene::mouseMove(int,int)" (?mouseMove@Scene@@UAEXHH@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Scene::~Scene(void)" (??1Scene@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Scene::arangeChildren(void)" (?arangeChildren@Scene@@QAEXXZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Layout::add(class Scene *,class Layout::LayoutInfo &)" (?add@Layout@@QAEXPAVScene@@AAVLayoutInfo@1@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Layout::add(class Layout *,class Layout::LayoutInfo &)" (?add@Layout@@QAEXPAV1@AAVLayoutInfo@1@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: bool __thiscall InputState::Mouse::isLdown(void)" (?isLdown@Mouse@InputState@@QAE_NXZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ButtonEntity::~ButtonEntity(void)" (??1ButtonEntity@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ConstantLayout::Info::Info(enum ConstantLayout::Info::PlacementMode,int,int)" (??0Info@ConstantLayout@@QAE@W4PlacementMode@01@HH@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ConstantLayout::Info::Info(enum ConstantLayout::Info::PlacementMode,float,float)" (??0Info@ConstantLayout@@QAE@W4PlacementMode@01@MM@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ConstantLayout::~ConstantLayout(void)" (??1ConstantLayout@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ConstantLayout::ConstantLayout(void)" (??0ConstantLayout@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: static class ResourceManager * ResourceManager::globalResourceManager" (?globalResourceManager@ResourceManager@@2PAV1@A)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall RootScene::sizeChanged(int,int)" (?sizeChanged@RootScene@@UAEXHH@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall RootScene::init(void)" (?init@RootScene@@UAEXXZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall RootScene::increment(float,float)" (?increment@RootScene@@UAEXMM@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall RootScene::~RootScene(void)" (??1RootScene@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall RootScene::RootScene(void)" (??0RootScene@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual class RootScene * __thiscall RootScene::getRoot(void)" (?getRoot@RootScene@@UAEPAV1@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual float __thiscall RootScene::getTime(void)" (?getTime@RootScene@@UAEMXZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual class InputState * __thiscall RootScene::getInputState(void)" (?getInputState@RootScene@@UAEPAVInputState@@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""private: virtual void __thiscall RootScene::processEvent(class Event *)" (?processEvent@RootScene@@EAEXPAVEvent@@@Z)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall HorizontalLayout::~HorizontalLayout(void)" (??1HorizontalLayout@@QAE@XZ)".
+     1>GeneticRootScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall HorizontalLayout::HorizontalLayout(void)" (??0HorizontalLayout@@QAE@XZ)".
+     1>main.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: int __thiscall Application::show(void)" (?show@Application@@QAEHXZ)".
+     1>main.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Application::create(struct HINSTANCE__ *,struct HINSTANCE__ *,wchar_t *,int)" (?create@Application@@QAEXPAUHINSTANCE__@@0PA_WH@Z)".
+     1>main.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Application::~Application(void)" (??1Application@@QAE@XZ)".
+     1>main.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Application::Application(class RootScene *)" (??0Application@@QAE@PAVRootScene@@@Z)".
+     1>main.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: static void __cdecl Globals::init(void)" (?init@Globals@@SAXXZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Entity::add(class EntityComponent *)" (?add@Entity@@QAEXPAVEntityComponent@@@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""float __cdecl ClampFuncs::one(float)" (?one@ClampFuncs@@YAMM@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""float __cdecl ClampFuncs::clmap01(float)" (?clmap01@ClampFuncs@@YAMM@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall EntityComponent::EntityComponent(void)" (??0EntityComponent@@QAE@XZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: struct glm::tmat4x4<float,0> __thiscall Scene::getProjection(enum Scene::ProjectionType)" (?getProjection@Scene@@QAE?AU?$tmat4x4@M$0A@@glm@@W4ProjectionType@1@@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Scene::init(void)" (?init@Scene@@UAEXXZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Scene::increment(float,float)" (?increment@Scene@@UAEXMM@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Scene::Scene(class Scene *)" (??0Scene@@QAE@PAV0@@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""protected: virtual class RootScene * __thiscall Scene::getRoot(void)" (?getRoot@Scene@@MAEPAVRootScene@@XZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""protected: virtual float __thiscall Scene::getTime(void)" (?getTime@Scene@@MAEMXZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""protected: virtual class InputState * __thiscall Scene::getInputState(void)" (?getInputState@Scene@@MAEPAVInputState@@XZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""protected: virtual void __thiscall Scene::processEvent(class Event *)" (?processEvent@Scene@@MAEXPAVEvent@@@Z)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ModelEntity::~ModelEntity(void)" (??1ModelEntity@@QAE@XZ)".
+     1>TestScene.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall ModelEntity::ModelEntity(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0ModelEntity@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: class Maths::Transform2 __thiscall Maths::Transform2::operator*(float)const " (??DTransform2@Maths@@QBE?AV01@M@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: class Maths::Transform2 __thiscall Maths::Transform2::operator+(class Maths::Transform2 const &)const " (??HTransform2@Maths@@QBE?AV01@ABV01@@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Viewer2::mouseWheel(int)" (?mouseWheel@Viewer2@@UAEXH@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Viewer2::mouseMove(int,int)" (?mouseMove@Viewer2@@UAEXHH@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Viewer2::~Viewer2(void)" (??1Viewer2@@QAE@XZ)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Viewer2::Viewer2(class Scene *)" (??0Viewer2@@QAE@PAVScene@@@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Entity::increment(float,float)" (?increment@Entity@@UAEXMM@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ResourceManager::to_string(void)" (?to_string@ResourceManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""float __cdecl ClampFuncs::circular(float)" (?circular@ClampFuncs@@YAMM@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall ModelEntity::uploadUniforms(class Shader *,int,void *)" (?uploadUniforms@ModelEntity@@UAEXPAVShader@@HPAX@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall ModelEntity::render(struct Maths::ProjView *,int)" (?render@ModelEntity@@UAEXPAUProjView@Maths@@H@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall ModelEntity::init(void)" (?init@ModelEntity@@UAEXXZ)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Text::pack(void)" (?pack@Text@@QAEXXZ)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: int __thiscall Text::size(void)" (?size@Text@@QAEHXZ)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: void __thiscall Text::remove(int)" (?remove@Text@@QAEXH@Z)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Text::~Text(void)" (??1Text@@QAE@XZ)".
+     1>ViewerTest.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: __thiscall Text::Text(void)" (??0Text@@QAE@XZ)".
+     1>C:\A\C_Programme\VC++\SceneBasedGraphics\Release\TestCases.exe : fatal error LNK1120: 72 nicht aufgelöste Externe
+     1>Die Erstellung des Projekts "C:\A\C_Programme\VC++\SceneBasedGraphics\TestCases\TestCases.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
+
+Fehler beim Buildvorgang.
+
+Verstrichene Zeit 00:00:04.78

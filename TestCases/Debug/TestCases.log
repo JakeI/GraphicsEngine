@@ -1,0 +1,13 @@
+﻿Der Buildvorgang wurde am 25.10.2016 21:25:47 gestartet.
+     1>Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\TestCases\TestCases.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\A\C_Programme\VC++\SceneBasedGraphics\Debug\TestCases.exe" /INCREMENTAL /NOLOGO SceneBasedGraphics.lib freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\A\C_Programme\VC++\SceneBasedGraphics\Debug\TestCases.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\A\C_Programme\VC++\SceneBasedGraphics\Debug\TestCases.lib" /MACHINE:X86 Debug\GeneticRootScene.obj
+         Debug\main.obj
+         Debug\TestScene.obj
+         Debug\ViewerTest.obj
+         TestCases.vcxproj -> C:\A\C_Programme\VC++\SceneBasedGraphics\Debug\TestCases.exe
+     1>Die Erstellung von Projekt "C:\A\C_Programme\VC++\SceneBasedGraphics\TestCases\TestCases.vcxproj" ist abgeschlossen (Build Ziel(e)).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+
+Verstrichene Zeit 00:00:00.88

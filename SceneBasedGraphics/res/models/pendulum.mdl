@@ -1,0 +1,7 @@
+
+Mode UNIFORM FULL
+	primative GL_TRIANGLES
+	shader "res/shaders/uniformColor"
+	range from 0 to end("res/meshs/pendulum.mesh")
+	
+	mesh "res/meshs/pendulum.mesh" layout xy
